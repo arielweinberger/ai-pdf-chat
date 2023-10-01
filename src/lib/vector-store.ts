@@ -6,7 +6,7 @@ import {
 } from "llamaindex";
 
 export async function createOrReadVectorStoreIndex(
-  pdfText: string,
+  pdfText?: string,
 ): Promise<VectorStoreIndex> {
   const document = new Document({ text: pdfText});
   
@@ -21,7 +21,7 @@ export async function createOrReadVectorStoreIndex(
 
   console.log("Creating index");
 
-  const index = await VectorStoreIndex.fromDocuments([document], {
+  const index = await VectorStoreIndex.fromDocuments(pdfText ? [document] : [], {
     storageContext,
     serviceContext,
   });
