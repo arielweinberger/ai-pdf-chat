@@ -7,7 +7,6 @@ import { FileUploader } from "react-drag-drop-files";
 import { Loader } from "@/components/Loader";
 import { useLoading } from "@/app/providers/LoadingProvider";
 import { uploadFile } from "@/app/lib/api";
-import { useRouter } from "next/router";
 
 const fileTypes = ["PDF"];
 
