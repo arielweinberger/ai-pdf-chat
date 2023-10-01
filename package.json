@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@cyber2024/pdf-parse-fixed": "^1.2.5",
+    "@dqbd/tiktoken": "^1.0.7",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/themes": "^2.0.0-rc.3",
     "@types/node": "20.6.4",
