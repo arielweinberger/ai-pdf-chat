@@ -13,6 +13,13 @@ import { useEffect, useRef } from "react";
 export default function ChatPage() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: "/api/chat",
+    initialMessages: [
+      {
+        id: "initial",
+        role: "assistant",
+        content: "Hello! I'm your PDF assistant. How can I help you?",
+      }
+    ]
   });
   const form = useRef<HTMLFormElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -24,7 +31,7 @@ export default function ChatPage() {
   }, [messages]);
 
   return (
-    <main className="h-full overflow-hidden bg-stone-900 p-12">
+    <main className="h-full overflow-hidden">
       <div className="h-full flex-col rounded-lg shadow-lg flex bg-neutral-100 bg-opacity-10 ">
         <div className="grid grid-flow-row-dense grid-cols-12 gap-4 h-14 items-center justify-center ">
           <div className="col-span-2 pl-4 pt-1">
